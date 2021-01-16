@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:snapping_sheet/snapping_sheet.dart';
+import 'package:snapping_sheet/snapping_content.dart';
+import 'package:snapping_sheet/snapping_sheet_content.dart';
 
 class PlaceholderSnapSheetExample extends StatelessWidget {
   @override
@@ -9,26 +11,165 @@ class PlaceholderSnapSheetExample extends StatelessWidget {
         title: Text('Placeholder example'),
       ),
       body: SnappingSheet(
-          child: Placeholder(
-            color: Colors.red,
+        sheetAbove: SnappingSheetContent(
+          snappingSheetSizeBehavior: SheetSizeFit(),
+          child: Placeholder(color: Colors.red),
+        ),
+        grabbingContent: SnappingContent(
+          isDraggable: true,
+          child: SizedBox(
+            height: 100,
+            child: Placeholder(color: Colors.blue),
           ),
-          sheetBelow: SnappingSheetContent(
-              child: Placeholder(
-                color: Colors.blue,
+        ),
+        sheetBelow: SnappingSheetContent(
+          isDraggable: true,
+          snappingSheetSizeBehavior: SheetSizeFixed(
+            expandOnOverflow: false,
+          ),
+          child: Container(
+            color: Colors.blue,
+            child: SizedBox(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              heightBehavior: SnappingSheetHeight.fit()),
-          grabbing: Container(
-            color: Colors.white.withOpacity(0.0),
-            child: Placeholder(
-              color: Colors.green,
             ),
           ),
-          sheetAbove: SnappingSheetContent(
-            child: Placeholder(
-              color: Colors.purple,
-            ),
-            heightBehavior: SnappingSheetHeight.fit(),
-          )),
+        ),
+        childUnder: Container(
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
